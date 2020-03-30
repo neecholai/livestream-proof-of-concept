@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "required": ["password", "phone", "first_name", "last_name"],
+  "additionalProperties": false,
+  "errorMessage": {
+    "required": {
+      "password": "Password required",
+      "first_name": "First name required",
+      "last_name": "Last name required",
+      "phone": "Phone required",
+      "email": "Email required"
+    },
+    "additionalProperties": "Additional properties forbidden"
+  },
+  "properties": {
+    "password": {
+      "$id": "#/properties/password",
+      "type": "string",
+      "minLength": 6,
+      "title": "The Password Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "errorMessage": {
+        "type": "Password must be a string",
+        "minLength": "Password must be at least six characters"
+      },
+      "examples": ["secret"]
+    },
+    "email": {
+      "$id": "#/properties/email",
+      "type": "string",
+      "title": "The Email Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "errorMessage": {
+        "type": "Email must be a string"
+      },
+      "examples": ["test@test.com"]
+    },
+    "phone": {
+      "$id": "#/properties/phone",
+      "type": "string",
+      "title": "The Phone Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "errorMessage": {
+        "type": "Phone number must be a string"
+      },
+      "examples": ["1233211212"]
+    },
+    "first_name": {
+      "$id": "#/properties/first_name",
+      "type": "string",
+      "title": "The First_name Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "errorMessage": {
+        "type": "First name must be a string"
+      },
+      "examples": ["Test"]
+    },
+    "last_name": {
+      "$id": "#/properties/last_name",
+      "type": "string",
+      "title": "The Last_name Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "errorMessage": {
+        "type": "Last name must be a string"
+      },
+      "examples": ["McTester"]
+    },
+    "stripe_customer_id": {
+      "$id": "#/properties/stripe_customer_id",
+      "type": "string",
+      "title": "The Stripe_customer_id Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "errorMessage": {
+        "type": "Stripe Customer ID must be a string"
+      },
+      "examples": ["32132k3k2l3k2"]
+    },
+    "password_reset_token": {
+      "$id": "#/properties/password_reset_token",
+      "type": "string",
+      "title": "The Password_reset_token Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "errorMessage": {
+        "type": "Password Reset Token must be a string"
+      },
+      "examples": ["e2kdldklsa"]
+    }
+  }
+}
